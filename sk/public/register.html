@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,li{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <form action="/v1/users/reg" method="POST">
+        <h3>用户注册</h3>
+        <ul>
+            <li>
+                用户名：<input type="text" name="uname" id="uname">
+                <span>字母数字3~12位</span>
+            </li>
+            <li>
+                密码：<input type="password" name="upwd" id="upwd">
+                <span>字母数字3~12位</span>
+            </li>
+            <li>
+                邮箱：<input type="text" name="email" id="email">
+            </li>
+            <li>
+                手机<input type="text" name="phone" id="phone">
+            </li>
+            <li>
+                <a href="login.html">已有账号？返回登录</a>
+            </li>
+            <li>
+                <input type="button" value="注册"  id="but" onclick="show()">
+            </li>
+        </ul>
+        <h1 id="msg"></h1>
+    </form>
+    <script>
+        function show(){
+            let reg=/^[a-zA-Z0-9]{3,12}$/;
+            let msg=document.getElementById('msg');
+            
+        }
+    </script>
+        
+    
+</body>
+</html>

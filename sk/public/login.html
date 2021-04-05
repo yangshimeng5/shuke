@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <form action="/v1/users/login" method="POST">
+        <h3>用户登录</h3>
+        <ul>
+            <li>
+                用户名：<input type="text" name="uname" id="uname">
+            </li>
+            <li>
+                密码：<input type="password" name="upwd" id="upwd">
+            </li>
+            <li>
+                验证码：<input type="text" name="code" id="code">
+            </li>
+            <li>
+                <a href="register.html">用户注册</a>
+            </li>
+            <li>
+                <input type="button" value="登录" id="but" onclick="show()">
+            </li>
+            <h1 id="msg"></h1>
+        </ul>
+    </form>
+    <script>
+        function show(){
+            let reg=/^[a-zA-Z0-9]{3,12}$/;
+            let reg2=/^[a-zA-Z0-9]{3,12}$/;
+            let msg=document.getElementById('msg');
+            let uname=document.getElementById('uname');
+            let upwd=document.getElementById('upwd');
+             // 5：验证用户名如果错误：添加提示消息 停止函数执行
+            if(!reg.test(uname.value)){
+                msg.innerHTML="用户名格式错误";
+                return;
+            }
+            // 6：验证密码如果错误：添加提示消息 停止函数执行
+            if(!reg.test(upwd.value)){
+                msg.innerHTML="密码格式错误";
+                return;
+            }
+            // 6.1创建正则表达式验证码4位数字
+            var reg3=/^[0-9]{4}$/;
+            // 6.2获取验证元素 id="code"
+            var code=document.getElementById("code");
+            // 6.3验证用户输入的验证码如果格式不正确
+            if(!reg3.test(code.value)){
+                msg.innerHTML="验证码格式错误"
+                return;
+            }
+            // 6.4添加提示信息
+            // 6.5返回
+            // 7：添加提示消息“验证通过”
+            msg.innerHTML="验证通过";
+        }
+    </script>
+</body>
+</html>
