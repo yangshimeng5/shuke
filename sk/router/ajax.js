@@ -11,7 +11,7 @@ r.get("/http_login",(req,res)=>{
 	var _upwd=req.query.upwd;
 	//res.send("用户名:"+_uname+",密码:"+_upwd);
 	//操作数据库了
-	var sql="select * from xz_user where uname=? and upwd=?";
+	var sql="select * from sk_user where uname=? and upwd=?";
 	pool.query(sql,[_uname,_upwd],(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
