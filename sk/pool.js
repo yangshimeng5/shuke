@@ -4,9 +4,9 @@ const mysql=require('mysql');
 const pool=mysql.createPool({
     host:'127.0.0.1',
     port:3306,
-    user:'rot',
+    user:'root',
     password:'',
-    database:'xz',
+    database:'suke',
     connectionLimit:20
 });
 // 导出模块

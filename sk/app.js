@@ -27,5 +27,5 @@ app.use((err,req,res,next)=>{
 // 应用路由器的，添加前缀
 //将哟户的路由挂载到web服务器下同时添加前缀/user
 app.use('/v1/users',userRouter);
-app.use('/v1/ajax',ajaxRouter);
+app.use('/ajax',ajaxRouter);
 app.use('/v1/shop',shopRouter);
