@@ -17,7 +17,7 @@ shop.get('/',(req,res,next)=>{
 	//将每页数据量转为整型
 	let size=parseInt(obj.count);
 	//执行SQL命令
-	pool.query('select * from xz_laptop limit ?,?',[start,size],(err,result)=>{
+	pool.query('select * from sk_laptop limit ?,?',[start,size],(err,result)=>{
 	if (err){
 		next(err);
 		return;

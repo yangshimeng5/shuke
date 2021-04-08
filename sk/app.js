@@ -8,6 +8,7 @@ app.listen(8080);
 const bodyParser=require('body-parser');
 // 加载路由器Router
 const userRouter=require('./router/user.js');
+const ajaxRouter=require('./router/ajax.js');
 const shopRouter=require('./router/shopping.js');
 // 托管静态页面
 app.use(express.static('./public'));
@@ -26,4 +27,5 @@ app.use((err,req,res,next)=>{
 // 应用路由器的，添加前缀
 //将哟户的路由挂载到web服务器下同时添加前缀/user
 app.use('/v1/users',userRouter);
+app.use('/v1/ajax',ajaxRouter);
 app.use('/v1/shop',shopRouter);
