@@ -65,6 +65,15 @@ r.delete("/restful_del/:uid",(req,res)=>{
 		}
 	});
 });
+// get方法获取用户详细信息
+r.get("/restful_get/:uid",(req,res)=>{
+	var _uid=req.params.uid;
+	var sql="select * from sk_user where uid=?";
+	pool.query(sql,[_uid],(err,result)=>{
+		if(err) throw err;
+		res.send(result);
+	});
+});
 //获取所有用户信息
 r.get("/userlist",(req,res)=>{
 	var sql="select * from sk_user";

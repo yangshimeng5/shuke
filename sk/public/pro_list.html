@@ -55,7 +55,7 @@
                         <tr>
                             <td>${rows[i].uname}</td>
                             <td>${rows[i].phone}</td>
-                            <td><a href="">详细信息</a></td>
+                            <td><a href="javascript:get(${rows[i].uid})">详细信息</a></td>
                             <td><a href="javascript:del(${rows[i].uid})">删除</a></td>
                         </tr>`;
                     }
@@ -91,7 +91,21 @@
             let url=`http://127.0.0.1:8080/ajax/restful_del/${uid}`;
             // alert(url);
             xhr.open("delete",url,true);
-            // 提示删除成功或是失败
+            xhr.send();
+        };
+        // 进行数据传递，执行用户详细信息的操作
+        function get(uid){
+            alert(uid)
+            // 接收数据
+            let xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState===4 && xhr.status===200){
+                    alert(xhr.responseText)
+                }
+            }
+            let url=`http://127.0.0.1:8080/ajax/restful_get/${uid}`;
+            alert(url);
+            xhr.open("get",url,true);
             xhr.send();
         }
     </script>

@@ -5,55 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-        }
-        ul,li{
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        div{
-            margin-top: 30px;
-            margin:  auto;
-            width: 300px;
-            height: 400px;
-            background-color: aquamarine;
-            /* background-color: yellowgreen; */
-        }
-        input{
-            border: none;
-            
-        }
-    </style>
+    <link rel="stylesheet" href="./css/login.css ">
 </head>
 <body>
     <!-- <form action="/v1/users/login" method="POST"> -->
+        <!--  -->
+        <div id="head">
+            <div id="center">
+                <h1>书客</h1>
+                <span>想你所想，想看，想得</span>
+            </div>
+        </div>
         <form action="#">
-        <div>
-        <h3>用户登录</h3>
-        <ul>
-            <li>
-                用户名：<input type="text" name="uname" id="uname">
-            </li>
-            <li>
-                密&nbsp;&nbsp;&nbsp;码：<input type="password" name="upwd" id="upwd">
-            </li>
-            <!-- <li>
-                验证码：<input type="text" name="code" id="code">
-            </li> -->
-            <li>
-                <a href="register.html">用户注册</a>
-            </li>
-            <li>
-                <input type="button" value="登录" id="but" onclick="login()">
-            </li>
-            <!-- <h1 id="msg"></h1> -->
-        </ul>
-    </div>
+        <div id="main">
+            <div id="tatil">
+                <h3>买书就到书客，超值！</h3>
+            </div>
+            <div id="login">
+                <h2 id="user">用户登录</h2>
+                <ul>
+                    <li>
+                        用户名：<input type="text" name="uname" id="uname">
+                    </li>
+                    <li>
+                        密&nbsp;&nbsp;&nbsp;码：<input type="password" name="upwd" id="upwd">
+                    </li>
+                    <!-- <li>
+                        验证码：<input type="text" name="code" id="code">
+                    </li> -->
+                    <li id="lia">
+                        <a href="register.html">用户注册</a>
+                    </li>
+                    <li>
+                        <input type="button" value="登录" id="but" onclick="login()">
+                    </li>
+                    <!-- <h1 id="msg"></h1> -->
+                </ul>
+            </div>
+        </div>
     </form>
+    <footer>
+        <ul>
+            <li><img src="./img/legal.png" alt="" ></li>
+            <li><img src="./img/invoice.png" alt=""></li>
+            <li><img src="./img/service.png" alt="" ></li>
+        </ul>
+    </footer>
     <script>
         function login(){
             // let reg=/^[a-zA-Z0-9]{3,12}$/;
