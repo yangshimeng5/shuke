@@ -5,40 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        ul,li{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/register.css">
 </head>
 <body>
-    <form action="/v1/users/reg" method="POST">
-        <h3>用户注册</h3>
-        <ul>
-            <li>
-                用户名：<input type="text" name="uname" id="uname">
-                <span>字母数字3~12位</span>
-            </li>
-            <li>
-                密码：<input type="password" name="upwd" id="upwd">
-                <span>字母数字3~12位</span>
-            </li>
-            <li>
-                邮箱：<input type="text" name="email" id="email">
-            </li>
-            <li>
-                手机<input type="text" name="phone" id="phone">
-            </li>
-            <li>
-                <a href="login.html">已有账号？返回登录</a>
-            </li>
-            <li>
-                <input type="button" value="注册"  id="but" onclick="reg()">
-            </li>
-        </ul>
+    <div id="head">
+        <div id="center">
+            <img src="./img/logo.png" alt="" >
+        </div>
+    </div>
+    <div id="main">
+        <div id="tatil">
+            <h3>买书就到书客，超值！</h3>
+        </div> 
+        <form action="/v1/users/reg" method="POST"></form>
+        <div id="reg">
+           
+                <h2>用户注册</h2>
+                <ul>
+                    <li>
+                        用户名：<input type="text" name="uname" id="uname">
+                    </li>
+                    <li>
+                        密码：<input type="password" name="upwd" id="upwd">
+                    </li>
+                    <li>
+                        邮箱：<input type="text" name="email" id="email">
+                    </li>
+                    <li>
+                        手机：<input type="text" name="phone" id="phone">
+                    </li>
+                    <li id="lia">
+                        <a href="login.html">已有账号？返回登录</a>
+                    </li>
+                    <li>
+                        <input type="button" value="注册"  id="but" onclick="reg()">
+                    </li>
+                </ul>
+        </div> 
     </form>
+    </div>
+    <footer>
+        <ul>
+            <li><img src="./img/legal.png" alt="" ></li>
+            <li><img src="./img/invoice.png" alt=""></li>
+            <li><img src="./img/service.png" alt="" ></li>
+        </ul>
+    </footer>
     <script>
         function reg(){
             let reg1=/^[a-zA-Z0-9]{3,12}$/;
@@ -69,7 +81,7 @@
             xhr.onreadystatechange=function() {
                 if (xhr.readyState===4 && xhr.status===200){
                     let obj=JSON.parse(xhr.responseText);
-                    alert(xhr.responseText);
+                    // alert(xhr.responseText);
                     if(obj.code===200){
                         alert("注册成功");
                         location.href="./login.html"

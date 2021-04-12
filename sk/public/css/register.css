@@ -4,6 +4,11 @@
 }
 a{
     text-decoration: none;
+} 
+ul,li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 #head{
     width: 100%;
@@ -16,15 +21,11 @@ a{
 #center>img{
     height: 60px;
 }
-ul,li{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 #main{
     width: 100%;
     height: 600px;
     background-color: aquamarine;
+    box-sizing: border-box;
 }
 #tatil{
     width: 1000px;
@@ -35,14 +36,14 @@ ul,li{
 #tatil>h3{
     line-height: 60px;
 }
-#login{
-    padding: 60px 50px;
+#reg{
+    padding: 50px 50px;
     width: 200px;
     margin: auto;
     background-color: white;
     border-radius: 10px;
 }
-#login>h2{
+#reg >h2{
     margin: auto;
     color:green;
     margin-bottom: 30px;
@@ -54,7 +55,7 @@ ul,li{
 input{
     display: block;
     width: 100%;
-    height: 38px;
+    height: 35px;
     box-sizing: border-box;
     font-size: 16px;
     color: #333;
