@@ -54,7 +54,7 @@
                         <tr>
                             <td>${rows[i].uname}</td>
                             <td>${rows[i].phone}</td>
-                            <td><a href="javascript:get(${rows[i].uid})">详细信息</a></td>
+                            <td><a href="userdata.html?uid=${rows[i].uid}">详细信息</a></td>
                             <td><a href="javascript:del(${rows[i].uid})">删除</a></td>
                         </tr>`;
                     }
@@ -100,6 +100,7 @@
             xhr.onreadystatechange=function(){
                 if(xhr.readyState===4 && xhr.status===200){
                     alert(xhr.responseText)
+                    location.href="./userdata.html"
                 }
             }
             let url=`http://127.0.0.1:8080/ajax/restful_get/${uid}`;

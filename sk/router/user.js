@@ -65,4 +65,32 @@ r.post('/login',(req,res,next)=>{
         }
     })
 });
+// 修改用户信息
+r.put("/update",(req,res)=>{
+    let obj=req.body;
+     console.log(obj);
+    for(let k in obj){
+        k++;//遍历数组，检测数组是否为空，如果是错误编码为n
+        if(!obj[k]){
+            res.send({code:200 ,msg:k+"不能为空"});
+            return;
+        }
+    }
+    // 检测电号码是否为正确的格式
+    let reg=/^1[3-9]\d{9}$/;
+    let ph=reg.test(obj.phone);
+    if(!ph){
+        res.send({code:201,msg:"电话格式有误"});
+        return;
+    }
+    pool.query("update sk_user set ? where uid=?;",[obj,obj.uid],(err,result)=>{
+        console.log(result)
+        if(err){
+            next(err);
+            return;
+        }; 
+        res.send({code:200,msg:'修改成功'});
+    })
+
+})
 module.exports=r

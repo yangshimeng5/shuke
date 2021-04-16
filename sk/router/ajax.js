@@ -72,8 +72,11 @@ r.get("/restful_get/:uid",(req,res)=>{
 	pool.query(sql,[_uid],(err,result)=>{
 		if(err) throw err;
 		res.send(result);
+		console.log(result)
 	});
+	
 });
+
 //获取所有用户信息
 r.get("/userlist",(req,res)=>{
 	var sql="select * from sk_user";

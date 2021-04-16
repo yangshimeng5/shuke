@@ -1,8 +1,12 @@
 // 页面加载成功后执行的函数
 window.onload=function(){
+
     // alert(1);
     // 发送请求
-    let xhr=new XMLHttpRequest();
+    var obj=new URLSearchParams(location.search);
+    var _uid=obj.get("uid")
+    alert(_uid)
+    var xhr=new XMLHttpRequest();
     xhr.onreadystatechange=function(){
         // 接收返回的数据
         // alert(xhr.readyState)
@@ -25,13 +29,13 @@ window.onload=function(){
                     <td>${rows[0].avatar}</td>
                     <td>${rows[0].user_name}</td>
                     <td>${rows[0].gender}</td>
-                    <td><a href="javascript:;">修改信息</a></td>
+                    <td><a href="modify.html?uid=${rows[0].uid}">修改信息</a></td>
                 </tr>`;
             // }
             // 循环外：将字符串赋值tbody.innerHTML
             tbody.innerHTML=html
         };
     };
-    xhr.open("get",`http://127.0.0.1:8080/ajax/restful_get/${1}`,true);
+    xhr.open("get",`http://127.0.0.1:8080/ajax/restful_get/${_uid}`,true);
     xhr.send();
 }
