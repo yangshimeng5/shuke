@@ -6,46 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="" src="./js/userdata.js"></script>
-    <style>
-        table{
-            width: 80%;
-            border: 1px solid black;
-            border-color: black;
-            text-align: center;
-        }
-        tr,td{
-            border: 1px solid black;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/userdata.css">
+    
 </head>
 <body>
-    <h1>详细信息表</h1>
-    <table>
-        <thead>
-            <tr>
-                <!-- <td>uid</td> -->
-                <td>用户名</td>
-                <td>email</td>
-                <td>联系方式</td>
-                <td>头像</td>
-                <td>真实姓名</td>
-                <td>性别</td>
-                <td>操作</td>
-
-            </tr>
-        </thead>
-        <tbody id="data">
-            <tr>
-                <!-- <td></td> -->
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><a href="#">修改信息</a></td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="header">
+        <div id="head" class="bac">
+            <div id="center">
+                <img src="./img/logo.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="list">
+            <h1>详细信息表</h1>
+            <table>
+                <thead>
+                    <tr id="thead">
+                        <!-- <td>uid</td> -->
+                        <td>用户名</td>
+                        <td>email</td>
+                        <td>联系方式</td>
+                        <td>头像</td>
+                        <td>真实姓名</td>
+                        <td>性别</td>
+                        <td>操作</td>
+                    </tr>
+                </thead>
+                <tbody id="data">
+                    <tr>
+                        <!-- <td></td> -->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="#">修改信息</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
