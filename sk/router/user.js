@@ -26,15 +26,24 @@ r.post('/reg',(req,res,next)=>{
         res.send({code:201,msg:"电话格式有误"});
         return;
     }
-    // 执行SQL命令
-    pool.query('insert into sk_user set ?',[obj],(err,result)=>{
-        if(err){
-            next(err);
-            return;
-        };
-        console.log(result);
-        res.send({code:200,msg:'注册成功'});
+    pool.query('select * from sk_user where uname=?',[obj.uname],(err,result)=>{
+        if(err) throw err;
+        if(result.length>0){
+            res.send({code:404,msg:"用户名存在"})
+        }else{
+            // 执行SQL命令
+            pool.query('insert into sk_user set ?',[obj],(err,result)=>{
+                if(err){
+                    next(err);
+                    return;
+                };
+                console.log(result);
+                res.send({code:200,msg:'注册成功'});
+            })
+        }
     })
+    
+    
 })
 
 
@@ -92,5 +101,18 @@ r.put("/update",(req,res)=>{
         res.send({code:200,msg:'修改成功'});
     })
 
+})
+r.get("/isexists",(req,res)=>{
+    let obj=req.query;
+    let sql="select uid from sk_user where uname=?";
+    console.log(sql,obj);
+    pool.query(sql,[obj.uname],(err,result)=>{
+        if(err) throw err;
+        if(result.length>0){
+            res.send("1")
+        }else{
+            res.send("0")
+        }
+    })
 })
 module.exports=r
